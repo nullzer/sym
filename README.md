@@ -34,7 +34,7 @@
 ## Установка
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 pip install -e .
@@ -73,7 +73,7 @@ no_helmet
 ## CLI-запуск
 
 ```bash
-python -m safety_helmet_analyzer analyze path/to/video.mp4 \
+python3 -m safety_helmet_analyzer analyze path/to/video.mp4 \
   --config config/default.json \
   --output reports/run-001
 ```
@@ -81,7 +81,7 @@ python -m safety_helmet_analyzer analyze path/to/video.mp4 \
 Для демонстрационного режима без ONNX-модели:
 
 ```bash
-python -m safety_helmet_analyzer analyze path/to/video.mp4 \
+python3 -m safety_helmet_analyzer analyze path/to/video.mp4 \
   --backend color \
   --output reports/color-demo
 ```
@@ -92,7 +92,7 @@ python -m safety_helmet_analyzer analyze path/to/video.mp4 \
 ## Локальный web-интерфейс
 
 ```bash
-python -m safety_helmet_analyzer web --host 127.0.0.1 --port 8080
+python3 -m safety_helmet_analyzer web --host 127.0.0.1 --port 8080
 ```
 
 Откройте `http://127.0.0.1:8080`, загрузите один видеофайл и дождитесь отчета.
@@ -100,7 +100,7 @@ python -m safety_helmet_analyzer web --host 127.0.0.1 --port 8080
 ## Проверка
 
 ```bash
-python -m unittest discover -s tests
+PYTHONPATH=src python3 -m unittest discover -s tests
 ```
 
 ## Ограничения MVP
