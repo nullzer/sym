@@ -1,0 +1,23 @@
+{
+  "video": {
+    "sample_fps": 2.0,
+    "max_evidence_frames_per_episode": 3
+  },
+  "detector": {
+    "backend": "onnx",
+    "model_path": "models/helmet_detector.onnx",
+    "labels_path": "models/labels.txt",
+    "input_size": 640,
+    "confidence_threshold": 0.35,
+    "nms_threshold": 0.45,
+    "person_labels": ["person", "worker"],
+    "helmet_labels": ["helmet", "hardhat", "hard_hat", "safety_helmet"],
+    "no_helmet_labels": ["no_helmet", "no-hardhat", "head"],
+    "flag_person_without_detected_helmet": true
+  },
+  "violations": {
+    "max_gap_seconds": 1.5,
+    "min_hits": 2,
+    "min_duration_seconds": 0.0
+  }
+}
