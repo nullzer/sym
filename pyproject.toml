@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safety-helmet-video-analyzer"
+version = "0.1.0"
+description = "Offline MVP for detecting missing safety helmets in worksite videos"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "opencv-python",
+]
+
+[project.scripts]
+safety-helmet-analyzer = "safety_helmet_analyzer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
